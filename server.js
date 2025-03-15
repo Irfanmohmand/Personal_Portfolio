@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use(cors({
-  origin: "react link",
+  origin: process.env.FRONTEND_URL,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }))
@@ -39,4 +39,4 @@ const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`);
   connectDb()
-});
+})
